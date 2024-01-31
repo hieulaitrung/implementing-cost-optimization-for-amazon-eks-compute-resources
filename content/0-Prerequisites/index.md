@@ -345,7 +345,7 @@ echo $TEMPOUT
 ```
 export KARPENTER_VERSION=v0.27.5
 echo "export KARPENTER_VERSION=${KARPENTER_VERSION}" >> ~/.bash_profile
-curl -fsSL https://karpenter.sh/"${KARPENTER_VERSION}"/getting-started/getting-started-with-karpenter/cloudformation.yaml > $TEMPOUT \
+curl -fsSL https://raw.githubusercontent.com/aws/karpenter-provider-aws/"${KARPENTER_VERSION}"/getting-started/getting-started-with-karpenter/cloudformation.yaml > $TEMPOUT \
 && aws cloudformation deploy \
   --stack-name Karpenter-${CLUSTER_NAME} \
   --template-file ${TEMPOUT} \
